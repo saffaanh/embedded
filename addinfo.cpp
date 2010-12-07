@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <Qt>
+
 addInfo::addInfo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::addInfo)
@@ -19,7 +20,7 @@ addInfo::~addInfo()
 
 void addInfo::accept()
 {
-    int clear =0;
+    int clear = 0;
     QMessageBox msgBox;
     foreach(QLineEdit *details, findChildren<QLineEdit*>()){
         if(details->text() == ""){
@@ -31,7 +32,7 @@ void addInfo::accept()
             msgBox.setWindowModality(Qt::ApplicationModal);
             msgBox.exec();
         }
-    clear=0;
+    clear = 0;
 
 }
 
@@ -105,3 +106,21 @@ void addInfo::keyPressEvent(QKeyEvent *e){
         addInfo::accept();
     }
     }
+void addInfo::carPark(){
+    QPalette palette;
+
+    if(ui->parkCombo->findText("A")){
+        palette.setColor(QPalette::Text, QColor(255, 0,0));
+        ui->parkEdit->setText("FULL");
+        ui->parkEdit->setPalette(palette);
+    }
+    palette.setColor(QPalette::Text, QColor(0,0,0));
+    if(ui->parkCombo->findText("B")){
+       ui->parkEdit->setPalette(palette);
+        ui->parkEdit->setText("200");
+    }
+    if(ui->parkCombo->findText("C")){
+        ui->parkEdit->setPalette(palette);
+        ui->parkEdit->setText("100");
+}
+}

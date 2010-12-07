@@ -21,6 +21,7 @@ public slots:
     void exitapp();
     void number();
     void letter();
+    void carPark();
 
 private:
     Ui::addInfo *ui;
