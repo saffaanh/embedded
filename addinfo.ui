@@ -210,6 +210,9 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="maxLength">
+    <number>8</number>
+   </property>
   </widget>
   <widget class="QLabel" name="surnameLabel_2">
    <property name="geometry">
@@ -238,6 +241,18 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>firstLine</tabstop>
+  <tabstop>surnameLine</tabstop>
+  <tabstop>addressLine</tabstop>
+  <tabstop>PostcodeLine</tabstop>
+  <tabstop>mobileLine</tabstop>
+  <tabstop>holidayLine</tabstop>
+  <tabstop>vehicleLine</tabstop>
+  <tabstop>clearButton</tabstop>
+  <tabstop>submitButton</tabstop>
+  <tabstop>exitButton</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -253,22 +268,6 @@
     <hint type="destinationlabel">
      <x>409</x>
      <y>293</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clearButton</sender>
-   <signal>clicked()</signal>
-   <receiver>addInfo</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>288</x>
-     <y>429</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>238</x>
-     <y>278</y>
     </hint>
    </hints>
   </connection>
@@ -304,9 +303,59 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>addInfo</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>firstLine</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>addInfo</receiver>
+   <slot>letter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>544</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>620</x>
+     <y>121</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>surnameLine</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>addInfo</receiver>
+   <slot>letter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>547</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>648</x>
+     <y>157</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>exitapp()</slot>
   <slot>number()</slot>
+  <slot>clear()</slot>
+  <slot>letter()</slot>
  </slots>
 </ui>

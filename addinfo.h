@@ -17,9 +17,10 @@ public:
 
 public slots:
     void accept();
-    void reject();
+    void clear();
     void exitapp();
     void number();
+    void letter();
 
 private:
     Ui::addInfo *ui;
