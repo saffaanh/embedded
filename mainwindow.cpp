@@ -6,6 +6,7 @@
 #include <QDesktopWidget>
 #include <QKeyEvent>
 #include <Qt>
+#include <changepassword.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -89,4 +90,10 @@ void MainWindow::on_actionExit_triggered()
 void MainWindow::keyPressEvent(QKeyEvent *e){
     if((e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return))
         MainWindow::button();
+}
+
+void MainWindow::changePass(){
+changePassword chPass;
+this->hide();
+chPass.exec();
 }

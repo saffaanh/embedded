@@ -6,24 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>422</width>
-    <height>322</height>
+    <width>284</width>
+    <height>227</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
-     <widget class="QFrame" name="loginFrame">
-      <property name="font">
-       <font>
-        <underline>false</underline>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#MainWindow{
+   <widget class="QFrame" name="loginFrame">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>266</width>
+      <height>156</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#MainWindow{
 background: gray;
 }
 
@@ -33,7 +39,7 @@ border-radius: 40px;
 background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(191, 128, 255, 64), stop:1 rgba(0, 0, 0, 0))rgb(255, 255, 127)qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:2, fx:0.5, fy:0.5, stop:0 rgba(117, 73, 133, 183), stop:1 rgba(255, 255, 255, 255))
 }
 
-QPushButton {
+QPushButton#pushButton{
 color: rgb(255, 255, 255);
 background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 0);
@@ -58,141 +64,143 @@ border-style: solid;
 border: 2px solid gray;
 border-radius: 8px;
 }</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="userLine">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>60</y>
-         <width>271</width>
-         <height>27</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>310</x>
-         <y>190</y>
-         <width>62</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="text">
-        <string>Login</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>20</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Car Park</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="passLabel">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>110</y>
-         <width>91</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <underline>false</underline>
-        </font>
-       </property>
-       <property name="text">
-        <string> Password:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="UserLabel">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>70</y>
-         <width>81</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <underline>false</underline>
-        </font>
-       </property>
-       <property name="text">
-        <string>Username:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="userPass">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>100</y>
-         <width>271</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>130</y>
-         <width>91</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <underline>true</underline>
-        </font>
-       </property>
-       <property name="text">
-        <string>Change Password</string>
-       </property>
-      </widget>
-     </widget>
-    </item>
-   </layout>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="userLine">
+     <property name="geometry">
+      <rect>
+       <x>95</x>
+       <y>40</y>
+       <width>161</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>192</x>
+       <y>123</y>
+       <width>62</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>Login</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>95</x>
+       <y>12</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Car Park</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="passLabel">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>68</y>
+       <width>71</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string> Password:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="UserLabel">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>40</y>
+       <width>72</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Username:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="userPass">
+     <property name="geometry">
+      <rect>
+       <x>95</x>
+       <y>68</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>90</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>Change Password</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>422</width>
+     <width>284</width>
      <height>21</height>
     </rect>
    </property>
@@ -253,17 +261,34 @@ border-radius: 8px;
    <slot>button()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>241</y>
+     <x>249</x>
+     <y>174</y>
     </hint>
     <hint type="destinationlabel">
-     <x>390</x>
-     <y>301</y>
+     <x>283</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changePass()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>204</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>button()</slot>
+  <slot>changePass()</slot>
  </slots>
 </ui>

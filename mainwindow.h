@@ -17,7 +17,7 @@ public:
 
 public slots:
         void button();
-
+        void changePass();
 private:
     Ui::MainWindow *ui;
     void keyPressEvent(QKeyEvent *e);
