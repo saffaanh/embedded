@@ -5,12 +5,14 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <Qt>
+#include <QStyle>
 
 addInfo::addInfo(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::addInfo)
 {
     ui->setupUi(this);
+    connect(ui->parkCombo,SIGNAL(currentIndexChanged(int)),this,SLOT(carPark(int)));
 }
 
 addInfo::~addInfo()
@@ -32,8 +34,22 @@ void addInfo::accept()
             msgBox.setWindowModality(Qt::ApplicationModal);
             msgBox.exec();
         }
-    clear = 0;
 
+    if ((clear == 0) && (ui->parkEdit->text() == "FULL")){
+        if (ui->parkEdit->text() == "FULL"){
+        msgBox.setText("No space in car park 'A'");
+        msgBox.setWindowModality(Qt::ApplicationModal);
+        msgBox.exec();
+    }
+    }
+    else if ((clear == 0) != (ui->parkEdit->text() == "FULL")){
+        foreach(QLineEdit *details, findChildren<QLineEdit*>()){
+        details->clear();
+        ui->parkCombo->setCurrentIndex(0);
+    }
+    }
+
+        clear = 0;
 }
 
 void addInfo::clear()
@@ -46,6 +62,7 @@ void addInfo::clear()
    case QMessageBox::Yes:
        foreach(QLineEdit *details, findChildren<QLineEdit*>())
            details->clear();
+           ui->parkCombo->setCurrentIndex(0);
        break;
    }
 
@@ -106,20 +123,22 @@ void addInfo::keyPressEvent(QKeyEvent *e){
         addInfo::accept();
     }
     }
-void addInfo::carPark(){
+void addInfo::carPark(int index){
     QPalette palette;
 
-    if(ui->parkCombo->findText("A")){
+    if (ui->parkCombo->findText("") == index)
+        ui->parkEdit->setText("");
+    if(ui->parkCombo->findText("A") == index){
         palette.setColor(QPalette::Text, QColor(255, 0,0));
         ui->parkEdit->setText("FULL");
         ui->parkEdit->setPalette(palette);
     }
     palette.setColor(QPalette::Text, QColor(0,0,0));
-    if(ui->parkCombo->findText("B")){
+    if(ui->parkCombo->findText("B") == index){
        ui->parkEdit->setPalette(palette);
         ui->parkEdit->setText("200");
     }
-    if(ui->parkCombo->findText("C")){
+    if(ui->parkCombo->findText("C") == index){
         ui->parkEdit->setPalette(palette);
         ui->parkEdit->setText("100");
 }

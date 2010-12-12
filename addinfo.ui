@@ -410,22 +410,6 @@
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>parkCombo</sender>
-   <signal>currentIndexChanged(QString)</signal>
-   <receiver>addInfo</receiver>
-   <slot>carPark()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>266</x>
-     <y>82</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>263</x>
-     <y>66</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
   <slot>exitapp()</slot>

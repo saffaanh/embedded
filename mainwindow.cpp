@@ -51,9 +51,7 @@ void MainWindow::button()
         ui->userPass->clear();
     }
 }
-
 }
-
 
 void MainWindow::on_actionLogin_triggered()
 {
@@ -80,7 +78,6 @@ void MainWindow::on_actionLogin_triggered()
         ui->userPass->clear();
     }
 }
-
 
 }
 
