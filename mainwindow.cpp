@@ -7,11 +7,16 @@
 #include <QKeyEvent>
 #include <Qt>
 #include <changepassword.h>
-
+char userDetails[50][6];
+char passDetails[50][6];
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    userDetails[0] = "saff";
+    userDetails[1] = "test";
+    passDetails[0] = "saff";
+    passDetails[1] = "test";
     ui->setupUi(this);
     QRect geometry = QDesktopWidget().availableGeometry();
     QRect current = frameGeometry();
@@ -38,13 +43,15 @@ void MainWindow::button()
         msgbox.exec();
 }
     else{
-    if (ui->userLine->text() == "saff")
-        if (ui->userPass->text() == "saff"){
+        for(int i = 0; i < 6; i++)
+    if (ui->userLine->text() == userDetails[i])
+        if (ui->userPass->text() == passDetails[i]){
             this->hide();
             add.exec();
        }
 
-    if ((ui->userLine->text() != "saff") || (ui->userPass->text() != "saff")){
+       for(int j = 0; j < 6; j++)
+    if ((ui->userLine->text() != userDetails[j]) || (ui->userPass->text() != passDetails[j])){
         msgbox.setText("Wrong username and/or password!");
         msgbox.setWindowModality(Qt::ApplicationModal);
         msgbox.exec();

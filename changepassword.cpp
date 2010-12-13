@@ -21,10 +21,10 @@ QMessageBox msgBox;
     QString confirm(ui->confirmPassLine->text());
     char* newPass = pass.toLatin1().data();
     char* conf = confirm.toLatin1().data();
-   /// if(strcmp(newPass,conf))
-        msgBox.setText(ui->newpassLine->text());
-        msgBox.setText(ui->confirmPassLine->text());
+    if(QString::compare(ui->newpassLine->text(),ui->confirmPassLine->text(),Qt::CaseSensitive)){
+        msgBox.setText("Passwords do not match!");
         msgBox.exec();
-
-    this->close();
+    }
+    else
+        this->close();
 }
