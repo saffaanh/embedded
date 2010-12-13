@@ -96,4 +96,5 @@ void MainWindow::changePass(){
 changePassword chPass;
 this->hide();
 chPass.exec();
+this->show();
 }
