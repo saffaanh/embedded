@@ -13,12 +13,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     addinfo.cpp \
-    changepassword.cpp
+    changepassword.cpp \
+    choice.cpp
 
 HEADERS  += mainwindow.h \
     addinfo.h \
-    changepassword.h
+    changepassword.h \
+    choice.h
 
 FORMS    += mainwindow.ui \
     addinfo.ui \
-    changepassword.ui
+    changepassword.ui \
+    choice.ui

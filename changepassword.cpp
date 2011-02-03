@@ -17,10 +17,10 @@ changePassword::~changePassword()
 
 void changePassword::changePass(){
 QMessageBox msgBox;
-    QString pass(ui->newpassLine->text());
-    QString confirm(ui->confirmPassLine->text());
-    char* newPass = pass.toLatin1().data();
-    char* conf = confirm.toLatin1().data();
+    //QString pass(ui->newpassLine->text());
+    //QString confirm(ui->confirmPassLine->text());
+    //char* newPass = pass.toLatin1().data();
+    //char* conf = confirm.toLatin1().data();
     if(QString::compare(ui->newpassLine->text(),ui->confirmPassLine->text(),Qt::CaseSensitive)){
         msgBox.setText("Passwords do not match!");
         msgBox.exec();

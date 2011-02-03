@@ -1,22 +1,22 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
-#include <addinfo.h>
+#include <choice.h>
 #include <QMenuBar>
 #include <QDesktopWidget>
 #include <QKeyEvent>
 #include <Qt>
 #include <changepassword.h>
-char userDetails[50][6];
-char passDetails[50][6];
+//char userDetails[50][6];
+//char passDetails[50][6];
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    userDetails[0] = "saff";
-    userDetails[1] = "test";
-    passDetails[0] = "saff";
-    passDetails[1] = "test";
+    //userDetails[0] = "saff";
+    //userDetails[1] = "test";
+    //passDetails[0] = "saff";
+    //passDetails[1] = "test";
     ui->setupUi(this);
     QRect geometry = QDesktopWidget().availableGeometry();
     QRect current = frameGeometry();
@@ -34,7 +34,7 @@ MainWindow::~MainWindow()
 void MainWindow::button()
 {
     QMessageBox msgbox;
-    addInfo add;
+    choice choiceForm;
 
 
     if (ui->userLine->text() == "" || ui->userPass->text() == ""){
@@ -44,14 +44,14 @@ void MainWindow::button()
 }
     else{
         for(int i = 0; i < 6; i++)
-    if (ui->userLine->text() == userDetails[i])
-        if (ui->userPass->text() == passDetails[i]){
+    if (ui->userLine->text() == "test")
+        if (ui->userPass->text() == "test"){
             this->hide();
-            add.exec();
+            choiceForm.show();
        }
 
        for(int j = 0; j < 6; j++)
-    if ((ui->userLine->text() != userDetails[j]) || (ui->userPass->text() != passDetails[j])){
+    if ((ui->userLine->text() != "test") || (ui->userPass->text() != "test")){
         msgbox.setText("Wrong username and/or password!");
         msgbox.setWindowModality(Qt::ApplicationModal);
         msgbox.exec();
@@ -65,20 +65,20 @@ void MainWindow::on_actionLogin_triggered()
 {
 
     QMessageBox msgbox;
-    addInfo add;
+    choice choiceForm;
     if (ui->userLine->text() == "" || ui->userPass->text() == ""){
         msgbox.setText("Please fill in your username and/or password!");
         msgbox.setWindowModality(Qt::ApplicationModal);
         msgbox.exec();
 }
     else{
-    if (ui->userLine->text() == "saff")
-        if (ui->userPass->text() == "saff"){
+    if (ui->userLine->text() == "test")
+        if (ui->userPass->text() == "test"){
             this->hide();
-            add.exec();
+            choiceForm.show();
        }
 
-    if ((ui->userLine->text() != "saff") || (ui->userPass->text() != "saff")){
+    if ((ui->userLine->text() != "test") || (ui->userPass->text() != "test")){
         msgbox.setText("Wrong username and/or password!");
         msgbox.setWindowModality(Qt::ApplicationModal);
         msgbox.exec();
@@ -103,5 +103,5 @@ void MainWindow::changePass(){
 changePassword chPass;
 this->hide();
 chPass.exec();
-this->show();
+//this->show();
 }
